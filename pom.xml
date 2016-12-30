@@ -62,7 +62,15 @@
   </properties>
   <modules>
     <module>stone-crawler</module>
+    <module>stone-utility</module>
   </modules>
+  <dependencies>
+  	<dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${junit_version}</version>
+    </dependency>
+  </dependencies>
   <build>
   	<plugins>
   		<plugin>
