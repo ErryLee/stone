@@ -60,8 +60,8 @@
 	<project.build.sourceEncoding>${file_encoding}</project.build.sourceEncoding>
 	<!-- for maven compiler plugin -->
 	<maven_compiler_plugin_version>3.5.1</maven_compiler_plugin_version>
-	<java_source_version>1.6</java_source_version>
-	<java_target_version>1.6</java_target_version>
+	<java_source_version>1.7</java_source_version>
+	<java_target_version>1.7</java_target_version>
 	<file_encoding>UTF-8</file_encoding>
   </properties>
   <modules>
@@ -100,8 +100,8 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-compiler-plugin</artifactId>
             <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
+                <source>${java_source_version}</source>
+                <target>${java_target_version}</target>
                 <encoding>UTF-8</encoding>
             </configuration>
         </plugin>

@@ -11,6 +11,9 @@ public class SortAlgorithm {
 
 	/**
 	 * 冒泡排序,升序和降序
+	 * @param arrs
+	 * @param len
+	 * @param desc
 	 */
 	public static void bubbleSort(int[] arrs, int len, boolean desc) {
 		for (int i = 0; i < len - 1; i++) {
@@ -27,21 +30,46 @@ public class SortAlgorithm {
 			}
 		}
 	}
+	
+	/**
+	 * 鸡尾酒排序
+	 * @param arrs
+	 * @param len
+	 * @param desc
+	 */
+	public static void cocktailSort(int [] arrs, int len, boolean desc){
+		for(int i = 0; i < len/2; i++){
+			for(int j = i; j < len-i-1; j++){
+				if(arrs[j] > arrs[j+1]){
+					swap(arrs, j, j+1);
+				}
+			}
+			for(int g = len-i-1; g > i; g--){
+				if(arrs[g-1] > arrs[g]){
+					swap(arrs, g, g-1);
+				}
+			}
+		}
+	}
+	
 
+	/**
+	 * 交换两个数组中的值
+	 * @param arrs
+	 * @param i1
+	 * @param i2
+	 */
 	public static void swap(int[] arrs, int i1, int i2) {
 		arrs[i1] = arrs[i1] ^ arrs[i2];
 		arrs[i2] = arrs[i1] ^ arrs[i2];
 		arrs[i1] = arrs[i1] ^ arrs[i2];
 	}
 
-	public static void main(String[] args) {
-		int[] arrs = new int[] { 2, 1, 9, 2, 10, 5, 7, 11, 22, 0 };
-		DisplayUtils.showArray(arrs);
-		bubbleSort(arrs, arrs.length, false);
-		DisplayUtils.showArray(arrs);
-
-	}
-
+	/**
+	 * 输入数组工具类
+	 * @author Hannibal
+	 *
+	 */
 	public static class DisplayUtils {
 		public static void showArray(int[] arrs) {
 			for (int a : arrs) {
